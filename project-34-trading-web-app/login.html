@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* (Optional) You can add custom CSS here if needed */
+    </style>
+</head>
+
+<body class="font-montserrat bg-esblack text-light-white h-screen flex items-center justify-center">
+
+    <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-3xl text-white font-bold mb-6 text-center">Login</h2>
+
+        <form id="loginForm" action="#" method="post">
+            <div class="mb-4">
+                <label for="username" class="block text-gray-300 text-sm font-bold mb-2">Username</label>
+                <input type="text" id="username" name="username"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 !text-white"
+                    placeholder="Username">
+            </div>
+
+            <div class="mb-6">
+                <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
+                <input type="password" id="password" name="password"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 !text-white"
+                    placeholder="Password">
+            </div>
+
+            <div id="error-message" class="text-red-500 text-sm mb-4 hidden">All fields are required.</div>
+            <div id="success-message" class="text-green-500 text-sm mb-4 hidden">Successfully signed in!</div>
+
+
+            <div class="flex items-center justify-between">
+                <button
+                    class="bg-gradient-to-r from-deeppink to-coral hover:from-coral hover:to-deeppink text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Sign In
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-coral-500 hover:text-coral-300"
+                    href="#">
+                    Forgot Password?
+                </a>
+            </div>
+        </form>
+
+        <p class="text-center text-gray-400 text-xs mt-4">
+            © 2024 Trading App. All rights reserved.
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+
+
+            if (!username || !password) {
+                errorMessage.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+                return; // Stop further execution if fields are empty
+            }
+
+            // If all fields are filled, display success message and redirect
+            errorMessage.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+
+            // Simulate a short delay before redirecting to show the success message
+            setTimeout(() => {
+                window.location.href = "index.html"; // Redirect to the homepage
+            }, 1500); // 1.5 seconds delay
+
+        });
+    </script>
+
+</body>
+
+</html>
