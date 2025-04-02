@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - EBook Store</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Favicon Links (Optional, kept for completeness) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <!-- Internal CSS -->
+    <style>
+        /* Basic Reset & Root Variables */
+        :root {
+            --green: #27ae60;
+            --dark-color: #219150;
+            --black: #444;
+            --light-color: #666;
+            --border: .1rem solid rgba(0, 0, 0, .1);
+            --border-hover: .1rem solid var(--black);
+            --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif; /* Assuming Poppins font */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+            transition: width none;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        html::-webkit-scrollbar {
+            width: 1rem;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: var(--black);
+        }
+
+        body {
+             background: #eee;
+             padding-top: 2rem; /* Add some padding since header is gone */
+        }
+
+        section {
+            padding: 3rem 9%; /* Adjusted padding */
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .heading::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            height: .01rem;
+            background: rgba(0, 0, 0, .1);
+            z-index: -1;
+        }
+
+        .heading span {
+            font-size: 3rem;
+            padding: .5rem 2rem;
+            color: var(--black);
+            background: #fff;
+            border: var(--border);
+        }
+
+        .btn {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: .9rem 3rem;
+            border-radius: .5rem;
+            color: #fff;
+            background: var(--green);
+            font-size: 1.7rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: var(--dark-color);
+        }
+
+        /* Shopping Cart Specific Styles */
+        .shopping-cart {
+            padding: 2rem 9%;
+        }
+
+        .shopping-cart table {
+            width: 100%;
+            text-align: center;
+            border: var(--border);
+            border-radius: .5rem;
+            box-shadow: var(--box-shadow);
+            background-color: #fff;
+            font-size: 1.6rem;
+            border-collapse: collapse;
+        }
+         .shopping-cart table thead {
+            background-color: #f9f9f9;
+         }
+
+        .shopping-cart table th {
+            padding: 1.5rem;
+            font-size: 1.7rem;
+            color: var(--black);
+            border-bottom: var(--border);
+        }
+
+        .shopping-cart table td {
+            padding: 1.5rem 1rem;
+            border-bottom: var(--border);
+            color: var(--light-color);
+            vertical-align: middle;
+        }
+
+        .shopping-cart table img {
+            height: 10rem;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+        }
+
+         .shopping-cart table .product-title {
+            color: var(--black);
+            font-weight: 500;
+         }
+
+        .shopping-cart table input[type="number"] {
+            width: 8rem;
+            padding: .8rem 1rem;
+            border: var(--border);
+            border-radius: .5rem;
+            font-size: 1.6rem;
+            text-align: center;
+            margin: 0 .5rem;
+        }
+         .shopping-cart table input[type=number]::-webkit-inner-spin-button,
+         .shopping-cart table input[type=number]::-webkit-outer-spin-button {
+             -webkit-appearance: none;
+             margin: 0;
+         }
+         .shopping-cart table input[type=number] {
+             -moz-appearance: textfield;
+         }
+
+        .shopping-cart table .remove-btn {
+            color: #e74c3c;
+            font-size: 2.2rem;
+            cursor: pointer;
+        }
+
+        .shopping-cart table .remove-btn:hover {
+            color: #c0392b;
+        }
+
+        .shopping-cart .cart-total {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: var(--border);
+            border-radius: .5rem;
+            background-color: #fff;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .shopping-cart .cart-total .total-details {
+            font-size: 2rem;
+            color: var(--black);
+             flex-basis: 250px;
+             text-align: right;
+        }
+         .shopping-cart .cart-total .total-details span{
+             color: var(--green);
+             font-weight: bold;
+         }
+
+        .shopping-cart .cart-total .cart-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+             justify-content: flex-end;
+        }
+
+        .shopping-cart .cart-total .btn {
+            padding: 1rem 3rem;
+            font-size: 1.8rem;
+        }
+        .shopping-cart .cart-total .btn.continue-shopping {
+            background-color: var(--light-color);
+        }
+        .shopping-cart .cart-total .btn.continue-shopping:hover {
+            background-color: var(--black);
+        }
+
+        /* Loader Styles */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 10000;
+            background: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-container.active {
+            display: none;
+        }
+
+        .loader-container img {
+            height: 10rem;
+        }
+
+        /* Media Queries */
+        @media (max-width:991px) {
+            html {
+                font-size: 55%;
+            }
+            section {
+                padding: 3rem 2rem;
+            }
+             .shopping-cart table img {
+                 height: 8rem;
+             }
+             .shopping-cart .cart-total {
+                 justify-content: center;
+                 text-align: center;
+             }
+             .shopping-cart .cart-total .total-details {
+                 text-align: center;
+                 flex-basis: 100%;
+             }
+             .shopping-cart .cart-total .cart-actions {
+                 justify-content: center;
+                 width: 100%;
+             }
+        }
+
+        @media (max-width:768px) {
+            body {
+                padding-bottom: 2rem; /* Less padding needed without bottom nav */
+            }
+             .shopping-cart table {
+                 font-size: 1.4rem;
+             }
+             .shopping-cart table th {
+                 padding: 1rem .5rem;
+                 font-size: 1.5rem;
+             }
+             .shopping-cart table td {
+                 padding: 1rem .5rem;
+             }
+             .shopping-cart table img {
+                 height: 6rem;
+             }
+             .shopping-cart table input[type="number"] {
+                 width: 6rem;
+                 padding: .5rem;
+             }
+        }
+
+        @media (max-width:450px) {
+            html {
+                font-size: 50%;
+            }
+            .shopping-cart table thead {
+                display: none;
+            }
+            .shopping-cart table, .shopping-cart table tbody, .shopping-cart table tr, .shopping-cart table td {
+                display: block;
+                width: 100%;
+            }
+            .shopping-cart table tr {
+                margin-bottom: 1.5rem;
+                border: var(--border);
+                border-radius: .5rem;
+                background: #fff;
+            }
+            .shopping-cart table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none;
+                border-bottom: 1px solid #eee;
+            }
+             .shopping-cart table td:last-child {
+                 border-bottom: none;
+             }
+            .shopping-cart table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1rem;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+                color: var(--black);
+            }
+             .shopping-cart table td.product-image-cell {
+                 text-align: center;
+                 padding-left: 0;
+             }
+             .shopping-cart table td.product-image-cell::before {
+                 display: none;
+             }
+             .shopping-cart table img {
+                 height: 10rem;
+                 margin-bottom: 1rem;
+             }
+             .shopping-cart table input[type="number"] {
+                 width: 7rem;
+             }
+             .shopping-cart table .remove-btn {
+                 font-size: 2.5rem;
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Shopping Cart Section Starts -->
+<section class="shopping-cart">
+    <h1 class="heading"> <span>Shopping Cart</span> </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample Cart Item 1 -->
+            <tr class="cart-item">
+                <td data-label="Image" class="product-image-cell"><img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/book-1.png" alt="Book 1"></td>
+                <td data-label="Name" class="product-title">Featured Book Vol. 1</td>
+                <td data-label="Price" class="price">$15.99</td>
+                <td data-label="Quantity">
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </td>
+                <td data-label="Total" class="item-total">$15.99</td>
+                <td data-label="Action"><i class="fas fa-trash remove-btn"></i></td>
+            </tr>
+            <!-- Sample Cart Item 2 -->
+            <tr class="cart-item">
+                <td data-label="Image" class="product-image-cell"><img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/book-3.png" alt="Book 3"></td>
+                <td data-label="Name" class="product-title">Another Great Book</td>
+                <td data-label="Price" class="price">$12.50</td>
+                <td data-label="Quantity">
+                    <input type="number" value="2" min="1" class="quantity-input">
+                </td>
+                <td data-label="Total" class="item-total">$25.00</td>
+                <td data-label="Action"><i class="fas fa-trash remove-btn"></i></td>
+            </tr>
+             <!-- Sample Cart Item 3 -->
+            <tr class="cart-item">
+                <td data-label="Image" class="product-image-cell"><img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/book-5.png" alt="Book 5"></td>
+                <td data-label="Name" class="product-title">Programming Essentials</td>
+                <td data-label="Price" class="price">$20.00</td>
+                <td data-label="Quantity">
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </td>
+                <td data-label="Total" class="item-total">$20.00</td>
+                <td data-label="Action"><i class="fas fa-trash remove-btn"></i></td>
+            </tr>
+            <!-- Empty Cart Message Row (Initially Hidden by JS) -->
+             <tr class="cart-item-empty" style="display: none;">
+                 <td colspan="6">Your cart is empty. <a href="./index.html" style="color: var(--green); text-decoration: underline;">Continue Shopping</a></td> <!-- Link to index.html -->
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="cart-total">
+         <div class="cart-actions">
+            <!-- Link to index.html -->
+            <a href="./index.html" class="btn continue-shopping">Continue Shopping</a>
+        </div>
+        <div class="total-details">
+            <p>Subtotal : <span id="cart-subtotal">$60.99</span></p>
+            <p>Total : <span id="cart-grandtotal">$60.99</span></p>
+             <!-- Added ID for easier selection in JS -->
+             <a href="#" id="checkout-btn" class="btn">Proceed to Checkout</a>
+        </div>
+    </div>
+</section>
+<!-- Shopping Cart Section Ends -->
+
+<!-- loader -->
+<div class="loader-container">
+    <img src="https://raw.githubusercontent.com/KordePriyanka/Books4MU-Book-Store-Website-/main/image/loader-img.gif" alt="">
+</div>
+
+<!-- Internal JavaScript -->
+<script>
+    // Page load actions
+    window.onload = () => {
+        // Fade out loader
+        fadeOut();
+        // Initial cart calculation and check
+        updateCartTotal();
+        checkEmptyCart();
+    }
+
+    // Loader fade out function
+    function fadeOut() {
+        const loaderContainer = document.querySelector('.loader-container');
+        if(loaderContainer) {
+           setTimeout(() =>{
+                loaderContainer.classList.add('active');
+            }, 500); // Adjust timing if needed
+        }
+    }
+
+    // --- Cart Specific JavaScript ---
+
+    // Update individual item total
+    function updateItemTotal(itemRow) {
+        const priceElement = itemRow.querySelector('.price');
+        const quantityInput = itemRow.querySelector('.quantity-input');
+        const totalElement = itemRow.querySelector('.item-total');
+
+        if (!priceElement || !quantityInput || !totalElement) return;
+
+        const price = parseFloat(priceElement.textContent.replace('$', ''));
+        const quantity = parseInt(quantityInput.value);
+
+        if (isNaN(price) || isNaN(quantity) || quantity < 1) {
+             quantityInput.value = 1; // Reset to 1 if invalid
+             updateItemTotal(itemRow); // Recalculate
+            return;
+        }
+
+        const itemTotal = price * quantity;
+        totalElement.textContent = '$' + itemTotal.toFixed(2);
+        updateCartTotal(); // Update grand total whenever item total changes
+    }
+
+    // Update the grand total
+    function updateCartTotal() {
+        const cartItems = document.querySelectorAll('.cart-item'); // Select only actual items
+        const subtotalElement = document.getElementById('cart-subtotal');
+        const grandTotalElement = document.getElementById('cart-grandtotal');
+        let subtotal = 0;
+
+        cartItems.forEach(item => {
+            const itemTotalElement = item.querySelector('.item-total');
+            if (itemTotalElement) {
+                const itemTotal = parseFloat(itemTotalElement.textContent.replace('$', ''));
+                if (!isNaN(itemTotal)) {
+                    subtotal += itemTotal;
+                }
+            }
+        });
+
+        subtotalElement.textContent = '$' + subtotal.toFixed(2);
+        grandTotalElement.textContent = '$' + subtotal.toFixed(2); // Assuming no tax/shipping
+    }
+
+    // Check if cart is empty and show/hide message/totals
+    function checkEmptyCart() {
+        const cartItems = document.querySelectorAll('.cart-item');
+        const emptyCartMessage = document.querySelector('.cart-item-empty');
+        const cartTotalSection = document.querySelector('.cart-total');
+        const checkoutButton = document.getElementById('checkout-btn'); // Get checkout button
+
+        if (cartItems.length === 0 && emptyCartMessage && cartTotalSection && checkoutButton) {
+            emptyCartMessage.style.display = 'table-row';
+            cartTotalSection.style.display = 'none';
+        } else if (emptyCartMessage && cartTotalSection && checkoutButton) {
+            emptyCartMessage.style.display = 'none';
+            cartTotalSection.style.display = 'flex'; // Use flex as defined in CSS
+        }
+    }
+
+    // Event Listeners for Cart Actions (Event Delegation for table)
+    const cartTableBody = document.querySelector('.shopping-cart tbody');
+
+    if (cartTableBody) {
+        cartTableBody.addEventListener('click', function(event) {
+            // Remove item
+            if (event.target.classList.contains('remove-btn')) {
+                const itemRow = event.target.closest('.cart-item');
+                if (itemRow) {
+                    itemRow.remove();
+                    updateCartTotal();
+                    checkEmptyCart();
+                }
+            }
+        });
+
+        cartTableBody.addEventListener('input', function(event) {
+             // Update quantity
+            if (event.target.classList.contains('quantity-input')) {
+                const itemRow = event.target.closest('.cart-item');
+                if (itemRow) {
+                    updateItemTotal(itemRow);
+                }
+            }
+        });
+    }
+
+    // Event Listener for Proceed to Checkout Button
+    const checkoutButton = document.getElementById('checkout-btn');
+    if (checkoutButton) {
+        checkoutButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Check if cart is NOT empty before proceeding
+            const cartItems = document.querySelectorAll('.cart-item');
+            if (cartItems.length > 0) {
+                 // --- Optional: Add logic here to actually process the order ---
+                 // For example, send data to a server.
+                 // ---
+
+                 // Display message and redirect
+                 alert('Thank you for your order! Redirecting to the homepage.');
+                 window.location.href = './index.html'; // Redirect to home page
+            } else {
+                 alert('Your cart is empty. Please add items before checking out.');
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>
