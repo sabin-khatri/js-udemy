@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App</title>
+    <!-- Include Tailwind CSS via Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Optional custom styles */
+        body {
+            touch-action: none; /* Prevent scrolling on touch devices when drawing */
+        }
+        .tool-button.active {
+            @apply bg-blue-700 text-white; /* Tailwind classes for active state */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+
+    <h1 class="text-3xl font-bold mb-6 text-gray-700">Simple Drawing App</h1>
+
+    <!-- Toolbar -->
+    <div class="toolbar bg-white p-4 rounded-lg shadow-md mb-4 flex flex-wrap items-center justify-center gap-4">
+        <!-- Color Picker -->
+        <div class="flex items-center gap-2">
+            <label for="colorPicker" class="text-sm font-medium text-gray-600">Color:</label>
+            <input type="color" id="colorPicker" value="#000000" class="w-10 h-10 p-0 border-none rounded cursor-pointer">
+        </div>
+
+        <!-- Line Width -->
+        <div class="flex items-center gap-2">
+            <label for="lineWidth" class="text-sm font-medium text-gray-600">Width:</label>
+            <input type="range" id="lineWidth" min="1" max="50" value="5" class="cursor-pointer">
+            <span id="lineWidthValue" class="text-sm text-gray-600 w-6 text-right">5</span>
+        </div>
+
+        <!-- Tools -->
+        <div class="flex items-center gap-2">
+            <button id="penBtn" class="tool-button active px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-150 text-sm">Pen</button>
+            <button id="eraserBtn" class="tool-button px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400 transition duration-150 text-sm">Eraser</button>
+        </div>
+
+         <!-- Actions -->
+        <div class="flex items-center gap-2">
+           <button id="clearBtn" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition duration-150 text-sm">Clear</button>
+       </div>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="drawingCanvas" class="bg-white border border-gray-300 rounded-lg shadow-md cursor-crosshair">
+        Your browser does not support the canvas element.
+    </canvas>
+
+    <!-- Link JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
