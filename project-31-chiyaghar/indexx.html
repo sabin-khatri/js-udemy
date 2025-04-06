@@ -1,100 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chiya-Ghar | chiya is our passion</title>
+    <title>Chiya-Ghar</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="./output.css" rel="stylesheet" />
-  </head>
-  <body class="bg-brown-500">
-    <header class="relative bg-gradiant-to-b from-[#C2A679] to-[#5C4033] shadow-md" >
-        <div class="absolute bottom-0 left-0 w-full z-0">
-        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><defs><linearGradient id="gradient" x1="77%" y1="8%" x2="23%" y2="92%"><stop offset="5%" stop-color="#f78da7"></stop><stop offset="95%" stop-color="#8ED1FC"></stop></linearGradient></defs><path d="M 0,400 L 0,150 C 91.46428571428572,158.32142857142856 182.92857142857144,166.64285714285714 294,184 C 405.07142857142856,201.35714285714286 535.7500000000001,227.74999999999997 663,212 C 790.2499999999999,196.25000000000003 914.0714285714284,138.3571428571429 1043,121 C 1171.9285714285716,103.64285714285712 1305.9642857142858,126.82142857142856 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#gradient)" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
-  </div>
+    <style>
+    </style>
+</head>
 
-      <div class="container mx-auto flex items-center justify-between px-6 py-4 z-10 " >
-        <div class="flex items-center">
-          <img src="images/logo.png" alt="Logo" class="md:w-28 md:h-28 h-10 w-10" />
-          <h1 class="text-2xl font-bold text-red-700 mr-2">CHIYA</h1>
-          <h1 class="text-2xl font-bold">GHAR</h1>
-        </div>
-        <nav class="hidden md:flex space-x-6">
-          <a href="#" class="text-white hover:text-yellow-200">Home</a>
-          <a href="#" class="text-white hover:text-yellow-200">About Us</a>
-          <a href="#" class="text-white hover:text-yellow-200">Menu</a>
-          <a href="#" class="text-white hover:text-yellow-200">Cart</a>
-          <a href="#" class="text-white hover:text-yellow-200">Order</a>
-          <a href="#" class="text-white hover:text-yellow-200">Gallery</a>
-        
-        
-          
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class= "w-6 h-6  " viewBox="0 0 50 50" style="fill: #ffffff">
-              <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+<body class="bg-[#3C2F2F]">
+
+    <header class="relative shadow-md bg-[#5C4033]">
+        <div class="absolute bottom-0 left-0 w-full z-0">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+                <defs>
+                    <linearGradient id="headerWaveGradient" x1="77%" y1="8%" x2="23%" y2="92%">
+                        <stop offset="5%" stop-color="#C2A679"></stop>
+                        <stop offset="95%" stop-color="#5C4033"></stop>
+                    </linearGradient>
+                </defs>
+                <path d="M 0,400 L 0,150 C 91.46428571428572,158.32142857142856 182.92857142857144,166.64285714285714 294,184 C 405.07142857142856,201.35714285714286 535.7500000000001,227.74999999999997 663,212 C 790.2499999999999,196.25000000000003 914.0714285714284,138.3571428571429 1043,121 C 1171.9285714285716,103.64285714285712 1305.9642857142858,126.82142857142856 1440,150 L 1440,400 L 0,400 Z" stroke="none" stroke-width="0" fill="url(#headerWaveGradient)" fill-opacity="0.5" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path>
             </svg>
-         
-          <a href="#" class="focus:outline-white text-white hover:text-yellow-200 border border-white ">Contact Us </a>
-        </nav>
-        <div class="md:hidden flex items-center">
-            <button id="hamburger" class="text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    </button>
         </div>
-        </div>
-      </div>
-      <div id="menu" class="md:hidden absolute top-0 left-0 w-full bg-[#5C4033] bg-opacity-90 z-50 hidden ">
-        <<nav class="flex flex-col items-center space-y-4 py-4">
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Home
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                About Us
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Menu
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Cart
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Order
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Gallery
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Search
-            </a>
-            <a href="#" class="text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">
-                Contact Us
-            </a>
-        </nav>
-        
-      </div>
-      
-    </header>
-    <script src="script.js" defer></script>
-    <section class="relative bg-gradient-to-b from-[#5C4033] to-[#3C2F2F] text-white py-12">
-        <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center px-6">
-            <div class="text-center md:text-left mx-auto">
-                <h1 class="text-3xl md:text-5xl font-bold italic mb-4 font-serif">CHIYA</h1>
-                <div class="flex items-center">
-                 <h2 class="text-3xl md:text-3xl font-bold mb-4 font-serif ml-5 italic">IS OUR</h2> 
-                 <img src="images/chiya.svg" alt="">
+
+        <div class="container mx-auto flex items-center justify-between px-6 py-4 relative z-10">
+            <div class="flex items-center space-x-2">
+                <img src="images/logo.png" alt="Chiya Ghar Logo" class="md:w-16 md:h-16 h-10 w-10" />
+                <div>
+                   <span class="text-xl md:text-2xl font-bold text-red-600">CHIYA</span>
+                   <span class="text-xl md:text-2xl font-bold text-white">GHAR</span>
                 </div>
-                 <h1 class="text-3xl md:text-5xl font-bold mb-4 font-serif ml-5 italic"> PASSION</h1>
-                <p class="text-lg font-light mb-6">TRY IT TODAY. LOVE IT FOREVER.</p>
-        <a href="#"
-          class="bg-blue-300 text-gray-900 py-3 px-6 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition">
-          Shop Now
-        </a>
-      </div>
-      <div class="relative flex justify-center">
-        <img src="images/coffeecup.png" alt="Coffee Cup" class="w-full max-w-md mx-auto z-10 mb-4 md:mb-0">
-      </div>
-      </section>
-  </body>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-white hover:text-yellow-200 transition-colors">Home</a>
+                <a href="AboutUs.html" class="text-white hover:text-yellow-200 transition-colors">About Us</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition-colors">Menu</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition-colors">Cart</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition-colors">Order</a>
+                <a href="#" class="text-white hover:text-yellow-200 transition-colors">Gallery</a>
+                <button type="button" class="text-white hover:text-yellow-200 focus:outline-none" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="w-6 h-6" viewBox="0 0 50 50" style="fill: currentColor">
+                        <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+                    </svg>
+                </button>
+                <a href="#" class="text-white hover:text-yellow-200 border border-white rounded px-3 py-1 hover:bg-white hover:text-[#5C4033] transition-colors">Contact Us</a>
+            </nav>
+
+            <div class="md:hidden flex items-center">
+                <button id="hamburger-button" class="text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden absolute top-0 left-0 w-full bg-[#5C4033] bg-opacity-95 z-40 hidden">
+            <div class="pt-20 pb-8 px-4">
+                 <button id="close-menu-button" class="absolute top-6 right-6 text-white hover:text-yellow-200 focus:outline-none" aria-label="Close menu">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                     </svg>
+                 </button>
+                <nav class="flex flex-col items-center space-y-5">
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">Home</a>
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">About Us</a>
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">Menu</a>
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">Cart</a>
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">Order</a>
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">Gallery</a>
+                    <a href="#" class="text-lg text-white hover:text-yellow-200 transition-transform transform hover:scale-110 relative after:block after:h-[2px] after:w-0 after:bg-yellow-200 after:transition-all after:duration-300 hover:after:w-full">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-gradient-to-b from-[#5C4033] to-[#3C2F2F] text-white py-16 md:py-24">
+        <div class="container mx-auto grid md:grid-cols-2 gap-8 items-center px-6">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold italic mb-2 font-serif text-red-600">CHIYA</h1>
+                <div class="flex items-center justify-center md:justify-start mb-2">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold font-serif italic text-white mr-2">IS OUR</h2>
+                    <img src="images/chiya.svg" alt="Tea leaf icon" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 font-serif italic text-white"> PASSION</h1>
+                <p class="text-lg font-light mb-8 text-gray-200">TRY IT TODAY. LOVE IT FOREVER.</p>
+                <a href="#" class="bg-amber-500 text-[#3C2F2F] py-3 px-8 font-semibold rounded-lg hover:bg-amber-600 hover:text-white transition-colors duration-300 shadow-lg">
+                    Shop Now
+                </a>
+            </div>
+
+            <div class="relative flex justify-center mt-8 md:mt-0">
+                <img src="images/coffeecup.png" alt="Steaming cup of Chiya" class="w-full max-w-sm md:max-w-md mx-auto z-10 animate-pulse-slow" />
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              'pulse-slow': {
+                '0%, 100%': { opacity: 0.9 },
+                '50%': { opacity: 1 },
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+
+</body>
 </html>
