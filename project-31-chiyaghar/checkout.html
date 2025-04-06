@@ -101,7 +101,7 @@
       <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center font-serif text-amber-500">Checkout</h2>
 
       <div id="checkout-container" class="bg-[#5C4033] p-6 md:p-8 rounded-lg shadow-lg max-w-3xl mx-auto hidden">
-        {/* Order Summary Section */}
+      
         <div class="mb-8">
           <h3 class="text-2xl font-semibold mb-4 text-amber-400 border-b border-gray-600 pb-2">Order Summary</h3>
           <div id="checkout-items-container" class="space-y-2 text-gray-300 mb-4">
@@ -112,7 +112,7 @@
           </div>
         </div>
 
-        {/* Customer Details Form Section */}
+  
         <div>
            <h3 class="text-2xl font-semibold mb-4 text-amber-400 border-b border-gray-600 pb-2">Your Details</h3>
            <form id="checkout-form" class="space-y-4">
@@ -141,7 +141,7 @@
         </div>
       </div>
 
-       {/* Message for empty cart */}
+      
         <p id="empty-checkout-message" class="text-center text-gray-400 py-16 hidden text-xl bg-[#5C4033] p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
           Your cart is empty. Cannot proceed to checkout.
           <br/>
@@ -331,6 +331,51 @@
 
     // --- Initial Setup ---
     document.addEventListener('DOMContentLoaded', renderCheckoutSummary);
+    // Add this inside your DOMContentLoaded listener in checkout.html
+
+const CHECKOUT_DETAILS_KEY = 'chiyaGharCheckoutDetails'; // Must match the key used in order.html
+
+function prefillCheckoutForm() {
+    const prefillDataString = localStorage.getItem(CHECKOUT_DETAILS_KEY);
+    if (prefillDataString) {
+        try {
+            const prefillData = JSON.parse(prefillDataString);
+
+            // Get references to your form fields (Update IDs if different)
+            const nameInput = document.getElementById('name'); // Example ID, change if needed
+            const addressInput = document.getElementById('address'); // Example ID
+            const phoneInput = document.getElementById('phone'); // Example ID
+
+            // Pre-fill the form
+            if (nameInput && prefillData.name) {
+                nameInput.value = prefillData.name;
+            }
+            if (addressInput && prefillData.address) {
+                addressInput.value = prefillData.address;
+            }
+            if (phoneInput && prefillData.phone) {
+                phoneInput.value = prefillData.phone;
+            }
+
+            // IMPORTANT: Remove the temporary data after using it
+            localStorage.removeItem(CHECKOUT_DETAILS_KEY);
+            console.log('Checkout form pre-filled from edited order.');
+
+        } catch (error) {
+            console.error('Error parsing prefill data:', error);
+            localStorage.removeItem(CHECKOUT_DETAILS_KEY); // Remove invalid data
+        }
+    }
+}
+
+// Call this function when the checkout page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // ... other checkout page initialization code ...
+
+    prefillCheckoutForm(); // Add this line
+
+    // ... rest of your checkout page code ...
+});
 
   </script>
 
