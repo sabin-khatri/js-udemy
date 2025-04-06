@@ -88,16 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.addEventListener('mousedown', startDrawing);
     canvas.addEventListener('mousemove', draw);
     canvas.addEventListener('mouseup', stopDrawing);
-    canvas.addEventListener('mouseout', stopDrawing); // Stop drawing if mouse leaves canvas
+    canvas.addEventListener('mouseout', stopDrawing); 
 
-    // Touch events (for mobile/tablet)
+
     canvas.addEventListener('touchstart', (e) => {
-        e.preventDefault(); // Prevent scrolling
+        e.preventDefault(); 
         startDrawing(e.touches[0]);
     }, { passive: false });
 
     canvas.addEventListener('touchmove', (e) => {
-        e.preventDefault(); // Prevent scrolling
+        e.preventDefault(); 
         draw(e.touches[0]);
     }, { passive: false });
 
@@ -120,19 +120,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     clearBtn.addEventListener('click', () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height); 
     });
 
     penBtn.addEventListener('click', () => {
         currentTool = 'pen';
-        ctx.strokeStyle = currentColor; // Set color back to selected color
+        ctx.strokeStyle = currentColor; 
         penBtn.classList.add('active');
         eraserBtn.classList.remove('active');
     });
 
     eraserBtn.addEventListener('click', () => {
         currentTool = 'eraser';
-        ctx.strokeStyle = '#FFFFFF'; // Set color to white (or canvas background)
+        ctx.strokeStyle = '#FFFFFF'; 
         eraserBtn.classList.add('active');
         penBtn.classList.remove('active');
     });
@@ -143,6 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     lineWidthValueSpan.textContent = currentLineWidth;
-    penBtn.classList.add('active'); // Pen is active by default
+    penBtn.classList.add('active'); 
 
-}); // End DOMContentLoaded
+});
