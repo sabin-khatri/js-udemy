@@ -6,6 +6,28 @@
   <title>Chiya-Ghar - Menu</title>
   <link rel="icon" href="images/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional: Style for cart count indicator */
+    .cart-count::after {
+        content: attr(data-count);
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        background-color: red;
+        color: white;
+        font-size: 0.7rem;
+        font-weight: bold;
+        border-radius: 50%;
+        padding: 2px 5px;
+        line-height: 1;
+        min-width: 16px; /* Ensure circle shape */
+        text-align: center;
+    }
+    .cart-link {
+        position: relative; /* Needed for absolute positioning of count */
+        display: inline-block; /* Ensure proper spacing */
+    }
+  </style>
 </head>
 
 <body class="bg-[#3C2F2F] text-white">
@@ -22,13 +44,19 @@
           <a href="index.html" class="text-white hover:text-yellow-200">Home</a>
           <a href="AboutUs.html" class="text-white hover:text-yellow-200">About Us</a>
           <a href="menu.html" class="text-white hover:text-yellow-200 font-semibold">Menu</a>
-          <a href="cart.html" class="text-white hover:text-yellow-200">Cart</a>
+          <a href="cart.html" class="text-white hover:text-yellow-200 cart-link" id="nav-cart-link">Cart</a>
           <a href="#" class="text-white hover:text-yellow-200">Order</a>
           <a href="#" class="text-white hover:text-yellow-200">Gallery</a>
           <a href="#" class="text-white border border-white rounded px-3 py-1 hover:bg-white hover:text-[#5C4033]">Contact Us</a>
         </nav>
 
         <div class="md:hidden flex items-center">
+           {/* Mobile Cart Link */}
+           <a href="cart.html" class="text-white hover:text-yellow-200 mr-4 cart-link" id="mobile-nav-cart-link">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+          </a>
           <button id="hamburger-button" class="text-white" aria-label="Toggle menu">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -168,14 +196,10 @@
         </div>
         <div class="flex space-x-4">
           <a href="#" class="hover:text-yellow-200">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
-            </svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
           </a>
           <a href="#" class="hover:text-yellow-200">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-               <path fill-rule="evenodd" d="M12.315 2.014a.824.824 0 01.169-.138C13.243 1.15 14.58.918 16.04.918c1.42 0 2.66.22 3.43.874a3.917 3.917 0 011.417 1.417c.653.77.873 2.01.873 3.43 0 1.46-.232 2.797-.918 3.74a.87.87 0 01-.138.168c-1.313 1.313-3.243 1.195-7.707 1.195s-6.394.118-7.707-1.195a.824.824 0 01-.169-.138C1.195 13.243.963 11.906.963 10.446c0-1.42.22-2.66.874-3.43a3.917 3.917 0 011.417-1.417c.77-.653 2.01-.873 3.43-.873 1.46 0 2.797.232 3.74.918.06.046.116.092.169.138zM10.875 6.884a.608.608 0 00-.61.608v3.047a.608.608 0 00.61.608h3.047a.608.608 0 00.609-.608V7.491a.608.608 0 00-.609-.608h-3.047zm5.47 1.27a1.047 1.047 0 100-2.094 1.047 1.047 0 000 2.094zM4.858 12c0 3.846 3.075 7.047 6.83 7.047s6.83-3.201 6.83-7.047c0-3.845-3.075-7.047-6.83-7.047s-6.83 3.202-6.83 7.047z" clip-rule="evenodd" />
-            </svg>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.315 2.014a.824.824 0 01.169-.138C13.243 1.15 14.58.918 16.04.918c1.42 0 2.66.22 3.43.874a3.917 3.917 0 011.417 1.417c.653.77.873 2.01.873 3.43 0 1.46-.232 2.797-.918 3.74a.87.87 0 01-.138.168c-1.313 1.313-3.243 1.195-7.707 1.195s-6.394.118-7.707-1.195a.824.824 0 01-.169-.138C1.195 13.243.963 11.906.963 10.446c0-1.42.22-2.66.874-3.43a3.917 3.917 0 011.417-1.417c.77-.653 2.01-.873 3.43-.873 1.46 0 2.797.232 3.74.918.06.046.116.092.169.138zM10.875 6.884a.608.608 0 00-.61.608v3.047a.608.608 0 00.61.608h3.047a.608.608 0 00.609-.608V7.491a.608.608 0 00-.609-.608h-3.047zm5.47 1.27a1.047 1.047 0 100-2.094 1.047 1.047 0 000 2.094zM4.858 12c0 3.846 3.075 7.047 6.83 7.047s6.83-3.201 6.83-7.047c0-3.845-3.075-7.047-6.83-7.047s-6.83 3.202-6.83 7.047z" clip-rule="evenodd" /></svg>
           </a>
         </div>
       </div>
@@ -183,8 +207,8 @@
   </footer>
 
  <script>
+    // --- Navigation ---
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenuButton = document.getElementById('close-menu-button');
@@ -199,21 +223,86 @@
       document.body.style.overflow = '';
     });
 
+    // --- Cart Logic ---
+    const CART_KEY = 'chiyaGharCart';
+
+    // Function to get cart from localStorage
+    function getCart() {
+        const cart = localStorage.getItem(CART_KEY);
+        return cart ? JSON.parse(cart) : [];
+    }
+
+    // Function to save cart to localStorage
+    function saveCart(cart) {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+        updateCartCountIndicator(); // Update count whenever cart is saved
+    }
+
+    // Function to add an item to the cart
+    function addToCart(item) {
+        const cart = getCart();
+        const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+
+        if (existingItemIndex > -1) {
+            // Item exists, increase quantity
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            // New item, add with quantity 1
+            cart.push({ ...item, quantity: 1 });
+        }
+        saveCart(cart);
+    }
+
+     // Function to update the cart count indicator in the nav
+     function updateCartCountIndicator() {
+        const cart = getCart();
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const navCartLink = document.getElementById('nav-cart-link');
+        const mobileNavCartLink = document.getElementById('mobile-nav-cart-link');
+
+        if (totalItems > 0) {
+            if (navCartLink) navCartLink.classList.add('cart-count');
+            if (mobileNavCartLink) mobileNavCartLink.classList.add('cart-count');
+
+            if (navCartLink) navCartLink.dataset.count = totalItems;
+            if (mobileNavCartLink) mobileNavCartLink.dataset.count = totalItems;
+        } else {
+             if (navCartLink) navCartLink.classList.remove('cart-count');
+             if (mobileNavCartLink) mobileNavCartLink.classList.remove('cart-count');
+
+             if (navCartLink) delete navCartLink.dataset.count;
+             if (mobileNavCartLink) delete mobileNavCartLink.dataset.count;
+        }
+    }
+
+
+    // --- Event Listeners ---
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     addToCartButtons.forEach(button => {
       button.addEventListener('click', (event) => {
         const id = event.target.dataset.id;
         const name = event.target.dataset.name;
-        const price = event.target.dataset.price;
-        // Basic cart logic placeholder:
-        // In a real app, you'd add this item to a cart object/array,
-        // perhaps stored in localStorage or sent to a server.
-        console.log(`Added to cart: ${name} (ID: ${id}, Price: Rs.${price})`);
-        // Simple feedback to the user
+        const price = parseFloat(event.target.dataset.price); // Ensure price is a number
+
+        if (!id || !name || isNaN(price)) {
+            console.error('Invalid item data:', event.target.dataset);
+            alert('Could not add item to cart. Invalid data.');
+            return;
+        }
+
+        const item = { id, name, price };
+        addToCart(item);
+
+        // Provide feedback
         alert(`${name} added to cart!`);
-        // Optionally update a cart count indicator in the header
+        console.log(`Added to cart: ${name} (ID: ${id}, Price: Rs.${price})`);
       });
     });
+
+    // --- Initial Setup ---
+    // Update cart count on page load
+    document.addEventListener('DOMContentLoaded', updateCartCountIndicator);
+
  </script>
 
 </body>
