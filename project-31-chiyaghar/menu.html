@@ -327,6 +327,17 @@
         return cart ? JSON.parse(cart) : [];
     }
 
+    function logout() {
+        localStorage.removeItem(AUTH_KEY);
+        localStorage.removeItem(USER_KEY);
+        // --- ADD THIS LINE ---
+        localStorage.removeItem(CART_KEY); // Clear the cart on logout
+        // --- END ADD ---
+        updateNavBasedOnLogin(); // Update UI immediately
+        updateCartCountIndicator(); // Update cart count to 0
+        window.location.href = 'index.html'; // Redirect to home after logout
+    }
+
     // Function to save cart to localStorage
     function saveCart(cart) {
         localStorage.setItem(CART_KEY, JSON.stringify(cart));
