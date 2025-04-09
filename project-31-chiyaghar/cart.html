@@ -39,7 +39,7 @@
     .qty-btn:hover {
         background-color: #5C4033;
     }
-     .remove-btn, .checkout-item-btn { /* Style both action buttons similarly */
+     .remove-btn, .checkout-item-btn { 
         border: none;
         color: white;
         padding: 4px 10px;
@@ -47,33 +47,33 @@
         cursor: pointer;
         font-size: 0.9rem;
         transition: background-color 0.2s ease;
-        text-align: center; /* Ensure text is centered */
+        text-align: center; 
     }
     .remove-btn {
-        background-color: #dc2626; /* Red */
+        background-color: #dc2626; 
     }
     .remove-btn:hover {
-        background-color: #b91c1c; /* Darker Red */
+        background-color: #b91c1c; 
     }
     .checkout-item-btn {
-        background-color: #16a34a; /* Green */
-        margin-left: 5px; /* Add space between checkout and remove */
+        background-color: #16a34a; 
+        margin-left: 5px; 
     }
     .checkout-item-btn:hover {
-         background-color: #15803d; /* Darker Green */
+         background-color: #15803d; 
     }
 
-    /* Responsive layout adjustments for item actions */
+    
     .item-actions {
         display: flex;
-        flex-direction: column; /* Stack vertically on small screens */
-        align-items: flex-end; /* Align to the right */
-        gap: 0.5rem; /* Space between buttons */
-        width: auto; /* Adjust width as needed */
+        flex-direction: column;
+        align-items: flex-end; 
+        gap: 0.5rem; 
+        width: auto; 
     }
-    @media (min-width: 640px) { /* sm breakpoint or adjust as needed */
+    @media (min-width: 640px) { 
         .item-actions {
-            flex-direction: row; /* Side-by-side on larger screens */
+            flex-direction: row; 
             align-items: center;
         }
     }
@@ -198,7 +198,7 @@
     });
 
     const CART_KEY = 'chiyaGharCart';
-    const CHECKOUT_ITEM_KEY = 'chiyaGharCheckoutItem'; // Key for sessionStorage
+    const CHECKOUT_ITEM_KEY = 'chiyaGharCheckoutItem'; 
 
     function getCart() {
         const cart = localStorage.getItem(CART_KEY);
@@ -250,7 +250,7 @@
             cart.forEach(item => {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add(
-                    'flex', 'flex-col', 'sm:flex-row', // Stack on small, row on sm+
+                    'flex', 'flex-col', 'sm:flex-row', 
                     'items-start', 'sm:items-center',
                     'justify-between', 'py-3', 'border-b',
                     'border-gray-600', 'gap-3', 'sm:gap-4'
@@ -261,7 +261,7 @@
                 const itemName = item.name || 'Unknown Item';
                 const itemQuantity = item.quantity || 0;
 
-                // Container for item info and quantity controls
+                
                 const infoQtyContainer = document.createElement('div');
                 infoQtyContainer.classList.add('flex', 'flex-col', 'sm:flex-row', 'sm:items-center', 'flex-grow', 'gap-2', 'sm:gap-4', 'w-full', 'sm:w-auto');
 
@@ -277,9 +277,9 @@
                     </div>
                 `;
 
-                // Container for action buttons (Checkout Item, Remove)
+                
                 const actionsContainer = document.createElement('div');
-                actionsContainer.classList.add('item-actions', 'self-end', 'sm:self-center'); // Use custom class for responsive actions
+                actionsContainer.classList.add('item-actions', 'self-end', 'sm:self-center'); 
 
                 actionsContainer.innerHTML = `
                     <button class="checkout-item-btn" data-id="${item.id}">Checkout Item</button>
@@ -290,14 +290,14 @@
                 itemElement.appendChild(actionsContainer);
                 cartItemsContainer.appendChild(itemElement);
             });
-            updateTotal(); // Update the total for the entire cart
+            updateTotal(); 
         }
         updateCartCountIndicator();
     }
 
     function updateTotal() {
         const cart = getCart();
-        // Calculate total for all items currently shown in the cart summary
+      
         const total = cart.reduce((sum, item) => sum + (item.price || 0) * (item.quantity || 0), 0);
         cartTotalElement.textContent = `Rs. ${total.toFixed(2)}`;
     }
@@ -332,9 +332,9 @@
 
         if (itemToCheckout) {
             console.log('Checking out item:', itemToCheckout);
-            // Store only this item in sessionStorage for checkout.html to pick up
+            
             sessionStorage.setItem(CHECKOUT_ITEM_KEY, JSON.stringify(itemToCheckout));
-            // Redirect to checkout page
+            
             window.location.href = 'checkout.html';
         } else {
             console.error('Could not find item with ID to checkout:', itemId);
@@ -345,11 +345,11 @@
 
     cartItemsContainer.addEventListener('click', (event) => {
         const target = event.target;
-        // Find the closest parent element with data-item-id if the click wasn't directly on a button
+      
         const itemElement = target.closest('[data-item-id]');
         const itemId = itemElement ? itemElement.dataset.itemId : null;
 
-        if (!itemId) return; // Exit if no item ID context
+        if (!itemId) return; 
 
         if (target.classList.contains('increase-qty-btn')) {
             updateQuantity(itemId, 1);
@@ -365,7 +365,7 @@
     clearCartBtn.addEventListener('click', clearCart);
 
     document.addEventListener('DOMContentLoaded', () => {
-        sessionStorage.removeItem(CHECKOUT_ITEM_KEY); // Clear any leftover single item checkout data
+        sessionStorage.removeItem(CHECKOUT_ITEM_KEY); 
         renderCart();
     });
 
