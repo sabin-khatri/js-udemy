@@ -40,18 +40,26 @@
           <h1 class="text-2xl font-bold">GHAR</h1>
         </div>
 
-        <nav class="hidden md:flex items-center space-x-6">
+        <nav id="desktop-nav" class="hidden md:flex items-center space-x-6">
           <a href="index.html" class="text-white hover:text-yellow-200">Home</a>
           <a href="AboutUs.html" class="text-white hover:text-yellow-200">About Us</a>
           <a href="menu.html" class="text-white hover:text-yellow-200 font-semibold">Menu</a>
           <a href="cart.html" class="text-white hover:text-yellow-200 cart-link" id="nav-cart-link">Cart</a>
           <a href="order.html" class="text-white hover:text-yellow-200">Order</a>
           <a href="gallery.html" class="text-white hover:text-yellow-200">Gallery</a>
-          <a href="contactus.html" class="text-white border border-white rounded px-3 py-1 hover:bg-white hover:text-[#5C4033]">Contact Us</a>
+          <a href="contactus.html" class="text-white hover:text-yellow-200">Contact Us</a>
+          <!-- Dynamic Login/Logout/Register Links -->
+          <div id="auth-links-desktop" class="flex items-center space-x-6">
+             <a href="login.html" class="text-white hover:text-yellow-200">Login</a>
+             <a href="register.html" class="text-white border border-white rounded px-3 py-1 hover:bg-white hover:text-[#5C4033]">Register</a>
+          </div>
+           <div id="user-info-desktop" class="hidden items-center space-x-4">
+               <span id="username-desktop" class="text-white"></span>
+               <button id="logout-button-desktop" class="text-white border border-white rounded px-3 py-1 hover:bg-white hover:text-[#5C4033]">Logout</button>
+           </div>
         </nav>
 
         <div class="md:hidden flex items-center">
-          
            <a href="cart.html" class="text-white hover:text-yellow-200 mr-4 cart-link" id="mobile-nav-cart-link">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -80,6 +88,15 @@
           <a href="order.html" class="text-lg text-white hover:text-yellow-200">Order</a>
           <a href="gallery.html" class="text-lg text-white hover:text-yellow-200">Gallery</a>
           <a href="contactus.html" class="text-lg text-white hover:text-yellow-200">Contact Us</a>
+           <!-- Dynamic Login/Logout/Register Links Mobile -->
+           <div id="auth-links-mobile" class="flex flex-col items-center space-y-5 mt-4">
+               <a href="login.html" class="text-lg text-white hover:text-yellow-200">Login</a>
+               <a href="register.html" class="text-lg text-white hover:text-yellow-200">Register</a>
+           </div>
+           <div id="user-info-mobile" class="hidden flex-col items-center space-y-5 mt-4">
+                <span id="username-mobile" class="text-lg text-white"></span>
+                <button id="logout-button-mobile" class="text-lg text-white hover:text-yellow-200">Logout</button>
+            </div>
         </nav>
       </div>
     </div>
@@ -91,6 +108,7 @@
         <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center font-serif text-amber-500">Our Menu</h2>
         <div id="menu-items-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+          <!-- Menu Item 1 -->
           <div class="bg-[#5C4033] rounded-lg shadow-lg overflow-hidden flex flex-col">
             <img src="images/masala-chiya.webp" alt="Masala Chiya" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-grow">
@@ -106,6 +124,7 @@
             </div>
           </div>
 
+          <!-- Menu Item 2 -->
           <div class="bg-[#5C4033] rounded-lg shadow-lg overflow-hidden flex flex-col">
             <img src="images/dudh-chiya.webp" alt="Dudh Chiya" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-grow">
@@ -121,6 +140,7 @@
             </div>
           </div>
 
+          <!-- Menu Item 3 -->
           <div class="bg-[#5C4033] rounded-lg shadow-lg overflow-hidden flex flex-col">
             <img src="images/kalo-chiya.webp" alt="Kalo Chiya" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-grow">
@@ -136,6 +156,7 @@
             </div>
           </div>
 
+          <!-- Menu Item 4 -->
           <div class="bg-[#5C4033] rounded-lg shadow-lg overflow-hidden flex flex-col">
             <img src="images/lemon-ginger-chiya.webp" alt="Lemon Ginger Chiya" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-grow">
@@ -151,6 +172,7 @@
             </div>
            </div>
 
+          <!-- Menu Item 5 -->
           <div class="bg-[#5C4033] rounded-lg shadow-lg overflow-hidden flex flex-col">
             <img src="images/honey-lemon-ginger-chiya.webp" alt="Honey Lemon Ginger Chiya" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-grow">
@@ -166,6 +188,7 @@
             </div>
            </div>
 
+          <!-- Menu Item 6 -->
           <div class="bg-[#5C4033] rounded-lg shadow-lg overflow-hidden flex flex-col">
             <img src="images/Pudina-Chiya.webp" alt="Pudina Chiya (Mint Tea)" class="w-full h-48 object-cover">
             <div class="p-6 flex flex-col flex-grow">
@@ -207,6 +230,78 @@
   </footer>
 
  <script>
+    // --- Constants ---
+    const CART_KEY = 'chiyaGharCart';
+    const AUTH_KEY = 'chiyaGharUserLoggedIn';
+    const USER_KEY = 'chiyaGharUserName';
+
+    // --- Authentication Functions ---
+    function isLoggedIn() {
+        return localStorage.getItem(AUTH_KEY) === 'true';
+    }
+
+    function getUserName() {
+        return localStorage.getItem(USER_KEY);
+    }
+
+    function logout() {
+        localStorage.removeItem(AUTH_KEY);
+        localStorage.removeItem(USER_KEY);
+        updateNavBasedOnLogin(); // Update UI immediately
+        updateCartCountIndicator(); // Cart might depend on user
+        window.location.href = 'index.html'; // Redirect to home after logout
+    }
+
+    function updateNavBasedOnLogin() {
+        const loggedIn = isLoggedIn();
+        const userName = getUserName();
+
+        // Get all relevant elements
+        const authLinksDesktop = document.getElementById('auth-links-desktop');
+        const userInfoDesktop = document.getElementById('user-info-desktop');
+        const usernameDesktop = document.getElementById('username-desktop');
+        const logoutButtonDesktop = document.getElementById('logout-button-desktop');
+
+        const authLinksMobile = document.getElementById('auth-links-mobile');
+        const userInfoMobile = document.getElementById('user-info-mobile');
+        const usernameMobile = document.getElementById('username-mobile');
+        const logoutButtonMobile = document.getElementById('logout-button-mobile');
+
+        if (loggedIn) {
+            // Show user info, hide login/register links
+            if (authLinksDesktop) authLinksDesktop.classList.add('hidden');
+            if (userInfoDesktop) userInfoDesktop.classList.remove('hidden');
+            if (userInfoDesktop) userInfoDesktop.classList.add('flex'); // Ensure flex display
+            if (usernameDesktop) usernameDesktop.textContent = `Welcome, ${userName || 'User'}`; // Display username
+
+            if (authLinksMobile) authLinksMobile.classList.add('hidden');
+            if (userInfoMobile) userInfoMobile.classList.remove('hidden');
+            if (userInfoMobile) userInfoMobile.classList.add('flex'); // Ensure flex display
+            if (usernameMobile) usernameMobile.textContent = `Welcome, ${userName || 'User'}`;
+
+            // Add logout listeners if not already added
+            if (logoutButtonDesktop && !logoutButtonDesktop.dataset.listenerAdded) {
+                logoutButtonDesktop.addEventListener('click', logout);
+                logoutButtonDesktop.dataset.listenerAdded = 'true';
+            }
+            if (logoutButtonMobile && !logoutButtonMobile.dataset.listenerAdded) {
+                logoutButtonMobile.addEventListener('click', logout);
+                logoutButtonMobile.dataset.listenerAdded = 'true';
+            }
+
+        } else {
+            // Show login/register links, hide user info
+            if (authLinksDesktop) authLinksDesktop.classList.remove('hidden');
+            if (userInfoDesktop) userInfoDesktop.classList.add('hidden');
+            if (userInfoDesktop) userInfoDesktop.classList.remove('flex');
+
+            if (authLinksMobile) authLinksMobile.classList.remove('hidden');
+            if (userInfoMobile) userInfoMobile.classList.add('hidden');
+            if (userInfoMobile) userInfoMobile.classList.remove('flex');
+        }
+    }
+
+
     // --- Navigation ---
     document.getElementById('current-year').textContent = new Date().getFullYear();
     const hamburgerButton = document.getElementById('hamburger-button');
@@ -224,10 +319,10 @@
     });
 
     // --- Cart Logic ---
-    const CART_KEY = 'chiyaGharCart';
-
     // Function to get cart from localStorage
     function getCart() {
+        // Future consideration: Maybe associate cart with logged-in user?
+        // For now, using a single global cart.
         const cart = localStorage.getItem(CART_KEY);
         return cart ? JSON.parse(cart) : [];
     }
@@ -256,6 +351,7 @@
      // Function to update the cart count indicator in the nav
      function updateCartCountIndicator() {
         const cart = getCart();
+        // Only show count if logged in? Optional, for now show always
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         const navCartLink = document.getElementById('nav-cart-link');
         const mobileNavCartLink = document.getElementById('mobile-nav-cart-link');
@@ -263,23 +359,31 @@
         if (totalItems > 0) {
             if (navCartLink) navCartLink.classList.add('cart-count');
             if (mobileNavCartLink) mobileNavCartLink.classList.add('cart-count');
-
             if (navCartLink) navCartLink.dataset.count = totalItems;
             if (mobileNavCartLink) mobileNavCartLink.dataset.count = totalItems;
         } else {
              if (navCartLink) navCartLink.classList.remove('cart-count');
              if (mobileNavCartLink) mobileNavCartLink.classList.remove('cart-count');
-
              if (navCartLink) delete navCartLink.dataset.count;
              if (mobileNavCartLink) delete mobileNavCartLink.dataset.count;
         }
     }
 
-
     // --- Event Listeners ---
     const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
     addToCartButtons.forEach(button => {
       button.addEventListener('click', (event) => {
+        // *** LOGIN CHECK ADDED HERE ***
+        if (!isLoggedIn()) {
+            alert('Please log in or register to add items to the cart.');
+            // Redirect to login page, passing the current page as a parameter
+            // so we can redirect back after successful login.
+            window.location.href = `login.html?redirect=${encodeURIComponent(window.location.pathname + window.location.search)}`;
+            return; // Stop further execution
+        }
+        // *** END LOGIN CHECK ***
+
+        // --- Original Add to Cart Logic ---
         const id = event.target.dataset.id;
         const name = event.target.dataset.name;
         const price = parseFloat(event.target.dataset.price); // Ensure price is a number
@@ -294,14 +398,27 @@
         addToCart(item);
 
         // Provide feedback
-        alert(`${name} added to cart!`);
+        // Use a less intrusive feedback mechanism maybe? For now, alert is fine.
+        // Find a better way later (e.g., a temporary notification)
+        const feedbackElement = document.createElement('div');
+        feedbackElement.textContent = `${name} added to cart!`;
+        feedbackElement.className = 'fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg transition-opacity duration-300 ease-in-out z-50';
+        document.body.appendChild(feedbackElement);
+        setTimeout(() => {
+            feedbackElement.classList.add('opacity-0');
+            setTimeout(() => feedbackElement.remove(), 300); // Remove after fade out
+        }, 2000); // Show for 2 seconds
+
         console.log(`Added to cart: ${name} (ID: ${id}, Price: Rs.${price})`);
+        // --- End Original Add to Cart Logic ---
       });
     });
 
     // --- Initial Setup ---
-    // Update cart count on page load
-    document.addEventListener('DOMContentLoaded', updateCartCountIndicator);
+    document.addEventListener('DOMContentLoaded', () => {
+        updateNavBasedOnLogin();     // Update nav links based on login status
+        updateCartCountIndicator(); // Update cart count on page load
+    });
 
  </script>
 
