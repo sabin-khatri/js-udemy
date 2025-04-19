@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBook Store</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon Links - Replaced with placeholder images -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://placehold.co/180x180/27ae60/ffffff?text=Icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://placehold.co/32x32/27ae60/ffffff?text=Icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://placehold.co/16x16/27ae60/ffffff?text=I">
+    <!-- Removed manifest link as it requires a local file -->
+    <!-- <link rel="manifest" href="favicon_io/site.webmanifest"> -->
+</head>
+<body>
+
+<!-- header section starts  -->
+<header class="header">
+
+    <div class="header-1">
+        <a href="#" class="logo"> <i class="fas fa-book"></i>  EBook Store </a>
+
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="./cart.html" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="./index.html">home</a>
+            <a href="#featured">featured</a>
+            <a href="#">category</a>
+            <a href="#reviews">reviews</a>
+            <a href="./feedback.html">feedback</a>
+        </nav>
+    </div>
+</header>
+<!-- header section ends -->
+
+<!-- bottom navbar  -->
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#category" class="fas fa-tags"></a>
+    <a href="#reviews" class="fas fa-comments"></a>
+    <a href="#feedback" class="fas fa-feedback"></a> <!-- Assuming feedback uses an icon, added fas fa-feedback -->
+</nav>
+
+<!-- login form  -->
+<div class="login-form-container">
+    <div id="close-login-btn" class="fas fa-times"></div>
+    <form action="">
+        <h3>sign in</h3>
+        <span>username</span>
+        <input type="email" name="" class="box" placeholder="enter your email" id="">
+        <span>password</span>
+        <input type="password" name="" class="box" placeholder="enter your password" id="">
+        <div class="checkbox">
+            <input type="checkbox" name="" id="remember-me">
+            <label for="remember-me"> remember me</label>
+        </div>
+        <input type="submit" value="sign in" class="btn">
+        <p>forget password ? <a href="#">click here</a></p>
+        <p>don't have an account ? <a href="#">create one</a></p>
+    </form>
+</div>
+
+<!-- home section starts  -->
+<section class="home" id="home">
+    <div class="row">
+        <div class="content">
+            <h3>upto 75% off</h3>
+            <p>If you’re an BIT, CSIT, BCA, Engineering student and need a books, Books4MU has great deals on a wide range of books. Shop for these books from top authors and avail hugely discounted prices</p>
+            <a href="#" class="btn">shop now</a>
+        </div>
+
+        <div class="swiper books-slider">
+            <div class="swiper-wrapper">
+                <!-- Replaced GitHub images with Picsum Photos placeholders -->
+                <a href="#" class="swiper-slide"><img src="https://picsum.photos/200/300?random=1" alt="Book Cover 1"></a>
+                <a href="#" class="swiper-slide"><img src="https://picsum.photos/200/300?random=2" alt="Book Cover 2"></a>
+                <a href="#" class="swiper-slide"><img src="https://picsum.photos/200/300?random=3" alt="Book Cover 3"></a>
+                <a href="#" class="swiper-slide"><img src="https://picsum.photos/200/300?random=4" alt="Book Cover 4"></a>
+                <a href="#" class="swiper-slide"><img src="https://picsum.photos/200/300?random=5" alt="Book Cover 5"></a>
+                <a href="#" class="swiper-slide"><img src="https://picsum.photos/200/300?random=6" alt="Book Cover 6"></a>
+            </div>
+            <!-- Replaced stand image with a placeholder -->
+            <img src="https://placehold.co/800x150/dddddd/cccccc?text=Book+Stand" class="stand" alt="Book Stand Graphic">
+        </div>
+    </div>
+</section>
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+<section class="icons-container">
+    <div class="icons">
+        <i class="fas fa-shipping-fast"></i>
+        <div class="content">
+            <h3>free shipping</h3>
+            <p>order over $100</p>
+        </div>
+    </div>
+    <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+            <h3>secure payment</h3>
+            <p>100 secure payment</p>
+        </div>
+    </div>
+    <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+            <h3>easy returns</h3>
+            <p>10 days returns</p>
+        </div>
+    </div>
+    <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+            <h3>24/7 support</h3>
+            <p>call us anytime</p>
+        </div>
+    </div>
+</section>
+<!-- icons section ends -->
+
+<!-- featured section starts  -->
+<section class="featured" id="featured">
+    <h1 class="heading"> <span>featured books</span> </h1>
+    <div class="swiper featured-slider">
+        <div class="swiper-wrapper">
+            <!-- Replaced GitHub images with Picsum Photos placeholders -->
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                   <a href="./product.html"> <img src="https://picsum.photos/200/300?random=11" alt="Featured Book 1"> </a>
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="./product.html"> <img src="https://picsum.photos/200/300?random=12" alt="Featured Book 2"> </a>
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <a href="product.html"><img src="https://picsum.photos/200/300?random=13" alt="Featured Book 3"> </a>
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=14" alt="Featured Book 4">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=15" alt="Featured Book 5">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=16" alt="Featured Book 6">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=17" alt="Featured Book 7">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=18" alt="Featured Book 8">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=19" alt="Featured Book 9">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <div class="icons">
+                    <a href="#" class="fas fa-search"></a>
+                    <a href="#" class="fas fa-eye"></a>
+                </div>
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=20" alt="Featured Book 10">
+                </div>
+                <div class="content">
+                    <h3>featured books</h3>
+                    <div class="price">$15.99 <span>$20.99</span></div>
+                    <a href="./cart.html" class="btn">add to cart</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+<!-- featured section ends -->
+
+<!-- newsletter section starts -->
+<section class="newsletter">
+    <form action="">
+        <h3>subscribe for latest updates</h3>
+        <input type="email" name="" placeholder="enter your email" id="" class="box">
+        <input type="submit" value="subscribe" class="btn">
+    </form>
+</section>
+<!-- newsletter section ends -->
+
+<!-- category section starts  -->
+<section class="arrivals" id="arrivals"> <!-- Note: ID is "arrivals", heading is "Category" -->
+    <h1 class="heading"> <span>Category</span> </h1>
+    <div class="swiper arrivals-slider">
+        <div class="swiper-wrapper">
+            <!-- Replaced GitHub images with Picsum Photos placeholders -->
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=21" alt="Category Image 1">
+                </div>
+                <div class="content">
+                    <h3>Semester 1</h3>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=22" alt="Category Image 2">
+                </div>
+                <div class="content">
+                    <h3>Semester 2</h3>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=23" alt="Category Image 3">
+                </div>
+                <div class="content">
+                    <h3>Semester 3</h3>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=24" alt="Category Image 4">
+                </div>
+                <div class="content">
+                    <h3>Semester 4</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="swiper arrivals-slider">
+        <div class="swiper-wrapper">
+            <!-- Replaced GitHub images with Picsum Photos placeholders -->
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=25" alt="Category Image 5">
+                </div>
+                <div class="content">
+                    <h3>Semester 5</h3>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=26" alt="Category Image 6">
+                </div>
+                <div class="content">
+                    <h3>Semester 6</h3>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=27" alt="Category Image 7">
+                </div>
+                <div class="content">
+                    <h3>Semester 7</h3>
+                </div>
+            </a>
+
+            <a href="#" class="swiper-slide box">
+                <div class="image">
+                    <img src="https://picsum.photos/200/300?random=28" alt="Category Image 8"> <!-- Original used book3.png, replaced with placeholder -->
+                </div>
+                <div class="content">
+                    <h3>Semester 8</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- category section ends -->
+
+<!-- deal section starts  -->
+<section class="deal">
+    <div class="content">
+        <h3>deal of the day</h3>
+        <h1>upto 50% off</h1>
+        <p>Checkout before this deal expires at midnight.</p>
+        <a href="#" class="btn">shop now</a>
+    </div>
+    <div class="image">
+        <!-- Replaced deal image with a placeholder -->
+        <img src="https://picsum.photos/600/400?random=30" alt="Deal of the day banner">
+    </div>
+</section>
+<!-- deal section ends -->
+
+<!-- reviews section starts  -->
+<section class="reviews" id="reviews">
+    <h1 class="heading"> <span>client's reviews</span> </h1>
+    <div class="swiper reviews-slider">
+        <div class="swiper-wrapper">
+            <!-- Kept Picsum Photos for reviews as they were already placeholder/random images -->
+            <div class="swiper-slide box">
+                <img src="https://picsum.photos/150/150?random=1" alt="Client 1 Photo">
+                <h3>Sabin Khatri</h3>
+                <p>First of all, customer service is excellent. We get all author books for Mumbai University. People should try here for affordable and best prices.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="https://picsum.photos/150/150?random=2" alt="Client 2 Photo">
+                <h3>Sushant Basnet</h3>
+                <p>Best book store! Almost all books for exam preparation or other subjects are available at a reasonable price.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="https://picsum.photos/150/150?random=3" alt="Client 3 Photo">
+                <h3>Narendra Chapagain</h3>
+                <p>Customer service is good. Greeting customers and making required books available is very good.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="https://picsum.photos/150/150?random=4" alt="Client 4 Photo">
+                <h3>Prabin Adhikari</h3>
+                <p>This book center has a large collection of books, including engineering study materials for all semesters.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="https://picsum.photos/150/150?random=5" alt="Client 5 Photo">
+                <h3>Prajwal Adhikari</h3>
+                <p>I migrated to the online platform on Just Books because I found it difficult to visit their libraries before closing time.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+            <div class="swiper-slide box">
+                <img src="https://picsum.photos/150/150?random=6" alt="Client 6 Photo">
+                <h3>Anish Mishra</h3>
+                <p>I love this bookstore because books are organized well, making it easy to find what I need.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- reviews section ends -->
+
+<!-- feedback section starts  -->
+<section class="blogs" id="blogs"> <!-- Note: ID is "blogs", heading is "feedback" -->
+    <h1 class="heading"> <span>feedback</span> </h1>
+    <section class="newsletter">
+        <form action=""> <!-- Consider changing action to a real endpoint or removing it -->
+            <h3>give your feedback here...</h3>
+            <a href="./feedback.html" class="btn">Feedback</a>
+            <!-- <a href="./feedback.html"><input type="submit" value="feedback"> --> <!-- This input inside an 'a' tag is invalid HTML, use the button link above -->
+            <!-- </a> -->
+        </form>
+    </section>
+</section>
+<!-- feedback section ends -->
+
+<!-- footer section starts  -->
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>our locations</h3>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Nepal </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Asia </a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="./index.html"> <i class="fas fa-arrow-right"></i> home </a>
+            <a href="#featured"> <i class="fas fa-arrow-right"></i> featured </a> <!-- Added fragment identifier -->
+            <a href="#category"> <i class="fas fa-arrow-right"></i> Category </a> <!-- Point to category section ID -->
+            <a href="#reviews"> <i class="fas fa-arrow-right"></i> reviews </a> <!-- Added fragment identifier -->
+            <a href="./feedback.html"> <i class="fas fa-arrow-right"></i> feedback </a>
+        </div>
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="#"> <i class="fas fa-arrow-right"></i> account info </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> ordered items </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> privacy policy </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> payment method </a>
+            <a href="#"> <i class="fas fa-arrow-right"></i> our serivces </a>
+        </div>
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="tel:9864617560"> <i class="fas fa-phone"></i> 9864617560 </a> <!-- Added tel: -->
+            <a href="tel:9803573038"> <i class="fas fa-phone"></i> 9803573038 </a> <!-- Added tel: -->
+            <a href="mailto:btsolutionhub@gmail.com"> <i class="fas fa-envelope"></i> btsolutionhub@gmail.com </a> <!-- Added mailto: -->
+            <a href="mailto:bchsgjsk00@gmail.com"> <i class="fas fa-envelope"></i> bchsgjsk00@gmail.com </a> <!-- Added mailto: -->
+            <!-- Replaced map image with a placeholder -->
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114129.74280111189!2d87.34927577876773!3d26.6307242661531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef65ca2e795c05%3A0xae018d58e323458a!2sBelbari%2056600!5e0!3m2!1sen!2snp!4v1743609303050!5m2!1sen!2snp" 
+            width="300" 
+            height="200" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          
+        </div>
+    </div>
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a> <!-- Added # placeholder href -->
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a> <!-- Added # placeholder href -->
+        <a href="#" class="fab fa-linkedin"></a> <!-- Added # placeholder href -->
+        <a href="#" class="fab fa-github"></a> <!-- Added # placeholder href -->
+    </div>
+    <div class="credit"> created by <span>Sabin Khatri </span>copyright ©2024 all rights reserved! </div>
+</section>
+<!-- footer section ends -->
+
+<!-- loader  -->
+<div class="loader-container">
+    <!-- Replaced loader GIF with a simple placeholder -->
+    <!-- You could use an actual free loading GIF URL here if preferred -->
+    <i class="fas fa-spinner fa-spin fa-5x"></i>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="Loading..." style="width: 80px; height: 80px;">
+</div>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+</body>
+</html>
