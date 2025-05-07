@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Rooms | Rayal Park Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#e82574',
+                dark: '#bc1c5c',
+              },
+              textDark: '#0c0a09',
+              textLight: '#78716c',
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="text-textDark">
+    <nav class="bg-primary sticky top-0 z-50 shadow">
+      <div class="container mx-auto max-w-6xl px-4">
+        <div class="flex items-center justify-between h-16">
+          <a href="index.html" class="text-white text-lg font-bold">Rayal Park</a>
+          <div class="hidden md:flex items-center space-x-6">
+            <ul class="flex space-x-6 text-white text-sm">
+              <li><a href="index.html#home" class="hover:text-pink-200 transition-colors">Home</a></li>
+              <li><a href="about.html" class="hover:text-pink-200 transition-colors">About</a></li>
+              <li><a href="#rooms" class="hover:text-pink-200 transition-colors font-semibold">Rooms</a></li>
+              <li><a href="index.html#contact" class="hover:text-pink-200 transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button id="menu-btn" class="text-white text-2xl">
+              <i class="ri-menu-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="nav-links" class="hidden md:hidden absolute top-full left-0 right-0 bg-primary/95 backdrop-blur-sm py-4">
+        <ul class="flex flex-col items-center space-y-3 text-white text-sm">
+          <li><a href="index.html#home" class="hover:text-pink-200 transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-pink-200 transition-colors">About</a></li>
+          <li><a href="#rooms" class="hover:text-pink-200 transition-colors font-semibold">Rooms</a></li>
+          <li><a href="index.html#contact" class="hover:text-pink-200 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="bg-cover bg-center bg-no-repeat h-64 flex items-center justify-center text-white relative" style="background-image: url('assets/room-header.jpg');">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <h1 class="text-4xl font-semibold z-10 relative">Our Rooms</h1>
+    </header>
+
+    <main>
+      <section class="container mx-auto max-w-6xl px-4 py-20" id="rooms">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-textDark">Explore Our Accommodations</h2>
+          <p class="text-textLight max-w-2xl mx-auto">Find the perfect room for your stay, combining comfort, style, and exceptional amenities tailored to your needs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div class="room__card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="relative">
+              <img src="assets/room-1.jpg" alt="Deluxe Ocean View Room" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wifi-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-tv-2-line"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-cup-line"></i></span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h4 class="mb-2 text-xl font-semibold text-textDark">Deluxe Ocean View</h4>
+              <p class="mb-4 text-textLight text-sm flex-grow">Bask in luxury with breathtaking ocean views from your private suite. Features a king-size bed and modern amenities.</p>
+              <h5 class="mb-4 text-lg font-medium">Starting from <span class="text-primary">$299/night</span></h5>
+              <button class="mt-auto py-3 px-6 text-base font-medium text-white bg-primary rounded cursor-pointer transition duration-300 hover:bg-primary-dark w-full">Book Now</button>
+            </div>
+          </div>
+
+          <div class="room__card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="relative">
+              <img src="assets/room-2.jpg" alt="Executive Cityscape Room" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wifi-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-tv-2-line"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-briefcase-4-line"></i></span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h4 class="mb-2 text-xl font-semibold text-textDark">Executive Cityscape Room</h4>
+              <p class="mb-4 text-textLight text-sm flex-grow">Experience urban elegance and modern comfort in the heart of the city. Ideal for business travelers.</p>
+              <h5 class="mb-4 text-lg font-medium">Starting from <span class="text-primary">$199/night</span></h5>
+              <button class="mt-auto py-3 px-6 text-base font-medium text-white bg-primary rounded cursor-pointer transition duration-300 hover:bg-primary-dark w-full">Book Now</button>
+            </div>
+          </div>
+
+          <div class="room__card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="relative">
+              <img src="assets/room-3.jpg" alt="Family Garden Retreat Room" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wifi-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-plant-line"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-team-line"></i></span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h4 class="mb-2 text-xl font-semibold text-textDark">Family Garden Retreat</h4>
+              <p class="mb-4 text-textLight text-sm flex-grow">Spacious and inviting with garden access, perfect for creating cherished family memories. Includes extra bedding options.</p>
+              <h5 class="mb-4 text-lg font-medium">Starting from <span class="text-primary">$249/night</span></h5>
+              <button class="mt-auto py-3 px-6 text-base font-medium text-white bg-primary rounded cursor-pointer transition duration-300 hover:bg-primary-dark w-full">Book Now</button>
+            </div>
+          </div>
+
+          <div class="room__card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1170&q=80" alt="Standard Queen Room" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wifi-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-tv-2-line"></i></span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h4 class="mb-2 text-xl font-semibold text-textDark">Standard Queen Room</h4>
+              <p class="mb-4 text-textLight text-sm flex-grow">Comfortable and cost-effective, featuring a queen-size bed and all essential amenities for a pleasant stay.</p>
+              <h5 class="mb-4 text-lg font-medium">Starting from <span class="text-primary">$149/night</span></h5>
+              <button class="mt-auto py-3 px-6 text-base font-medium text-white bg-primary rounded cursor-pointer transition duration-300 hover:bg-primary-dark w-full">Book Now</button>
+            </div>
+          </div>
+
+          <div class="room__card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1170&q=80" alt="Luxury Penthouse Suite" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-vip-crown-2-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wifi-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-vidicon-line"></i></span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h4 class="mb-2 text-xl font-semibold text-textDark">Luxury Penthouse Suite</h4>
+              <p class="mb-4 text-textLight text-sm flex-grow">The pinnacle of luxury. Expansive suite with panoramic views, private balcony, jacuzzi, and premium services.</p>
+              <h5 class="mb-4 text-lg font-medium">Starting from <span class="text-primary">$599/night</span></h5>
+              <button class="mt-auto py-3 px-6 text-base font-medium text-white bg-primary rounded cursor-pointer transition duration-300 hover:bg-primary-dark w-full">Book Now</button>
+            </div>
+          </div>
+
+          <div class="room__card bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+            <div class="relative">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1074&q=80" alt="Accessible Twin Room" class="w-full h-64 object-cover" />
+              <div class="absolute top-4 right-4 flex flex-col gap-2">
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wheelchair-line"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-wifi-fill"></i></span>
+                <span class="bg-white/80 text-primary p-2 rounded-full text-lg cursor-pointer hover:bg-white transition-colors"><i class="ri-tv-2-line"></i></span>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h4 class="mb-2 text-xl font-semibold text-textDark">Accessible Twin Room</h4>
+              <p class="mb-4 text-textLight text-sm flex-grow">Designed for comfort and accessibility, featuring wider doorways, accessible bathroom, and two twin beds.</p>
+              <h5 class="mb-4 text-lg font-medium">Starting from <span class="text-primary">$179/night</span></h5>
+              <button class="mt-auto py-3 px-6 text-base font-medium text-white bg-primary rounded cursor-pointer transition duration-300 hover:bg-primary-dark w-full">Book Now</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+      <div class="container mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Rayal Park Hotel</h3>
+          <p class="text-sm text-gray-400">Luxury resort located in the heart of nature. Perfect for family, business, and relaxation.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="index.html#home" class="hover:text-white">Home</a></li>
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="index.html#rooms" class="hover:text-white">Rooms</a></li>
+            <li><a href="index.html#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-3">Contact Us</h4>
+          <p class="text-sm text-gray-400">Email: info@rayalpark.com</p>
+          <p class="text-sm text-gray-400">Phone: +123 456 789</p>
+          <p class="text-sm text-gray-400">Address: 123 Royal Street, Cityville</p>
+        </div>
+      </div>
+      <div class="text-center mt-8 text-sm text-gray-500">© 2025 Rayal Park. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

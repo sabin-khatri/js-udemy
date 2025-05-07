@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Rayal Park Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#e82574',
+                dark: '#bc1c5c',
+              },
+              textDark: '#0c0a09',
+              textLight: '#78716c',
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="text-textDark">
+    <nav class="bg-primary sticky top-0 z-50 shadow">
+      <div class="container mx-auto max-w-6xl px-4">
+         <div class="flex items-center justify-between h-16">
+             <a href="index.html" class="text-white text-lg font-bold">Rayal Park</a>
+
+             <div class="hidden md:flex items-center space-x-6">
+                 <ul class="flex space-x-6 text-white text-sm">
+                   <li><a href="index.html#home" class="hover:text-pink-200 transition-colors">Home</a></li>
+                   <li><a href="#about" class="hover:text-pink-200 transition-colors">About</a></li>
+                   <li><a href="index.html#rooms" class="hover:text-pink-200 transition-colors">Rooms</a></li>
+                   <li><a href="index.html#contact" class="hover:text-pink-200 transition-colors">Contact</a></li>
+                 </ul>
+             </div>
+
+             <div class="md:hidden flex items-center">
+                  <button id="menu-btn" class="text-white text-2xl">
+                     <i class="ri-menu-line"></i>
+                  </button>
+             </div>
+         </div>
+      </div>
+
+       <div id="nav-links" class="hidden md:hidden absolute top-full left-0 right-0 bg-primary/95 backdrop-blur-sm py-4">
+         <ul class="flex flex-col items-center space-y-3 text-white text-sm">
+           <li><a href="index.html#home" class="hover:text-pink-200 transition-colors">Home</a></li>
+           <li><a href="#about" class="hover:text-pink-200 transition-colors">About</a></li>
+           <li><a href="index.html#rooms" class="hover:text-pink-200 transition-colors">Rooms</a></li>
+           <li><a href="index.html#contact" class="hover:text-pink-200 transition-colors">Contact</a></li>
+         </ul>
+       </div>
+    </nav>
+
+    <header class="bg-cover bg-center bg-no-repeat h-64 flex items-center justify-center text-white relative" style="background-image: url('assets/header.jpg');">
+      <div class="absolute inset-0 bg-black/40"></div>
+      <h1 class="text-4xl font-semibold z-10 relative">About Us</h1>
+    </header>
+
+    <section class="container mx-auto max-w-6xl px-4 py-20" id="about">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <img src="assets/about.jpg" alt="About Image" class="rounded-lg shadow-lg w-full h-auto object-cover" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-semibold mb-4 text-textDark">Welcome to Rayal Park Hotel</h2>
+          <p class="text-textLight mb-4">Rayal Park is more than just a hotel — it’s an experience. Nestled in the serene beauty of nature, we provide guests with the perfect blend of comfort, luxury, and personalized service. Our elegant rooms, world-class amenities, and dedicated staff ensure that every stay is unforgettable.</p>
+          <p class="text-textLight mb-4">Whether you're here for a romantic getaway, family vacation, or business retreat, our goal is to exceed your expectations in every possible way. With a variety of rooms and packages, we cater to all types of travelers looking for something special.</p>
+          <p class="text-textLight">Come and discover the difference. Let Rayal Park be your home away from home — where memories are made and comfort meets elegance.</p>
+        </div>
+      </div>
+    </section>
+
+     <section class="bg-gray-100 py-16">
+        <div class="container mx-auto max-w-6xl px-4 text-center">
+            <h2 class="text-3xl font-semibold mb-8 text-textDark">Our Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow">
+                    <span class="text-4xl text-primary mb-3 inline-block"><i class="ri-service-line"></i></span>
+                    <h3 class="text-xl font-semibold mb-2 text-textDark">Excellence</h3>
+                    <p class="text-sm text-textLight">We strive for the highest standards in service and quality.</p>
+                </div>
+                 <div class="p-6 bg-white rounded-lg shadow">
+                    <span class="text-4xl text-primary mb-3 inline-block"><i class="ri-team-line"></i></span>
+                    <h3 class="text-xl font-semibold mb-2 text-textDark">Hospitality</h3>
+                    <p class="text-sm text-textLight">Creating a warm and welcoming environment for all our guests.</p>
+                </div>
+                 <div class="p-6 bg-white rounded-lg shadow">
+                    <span class="text-4xl text-primary mb-3 inline-block"><i class="ri-leaf-line"></i></span>
+                    <h3 class="text-xl font-semibold mb-2 text-textDark">Sustainability</h3>
+                    <p class="text-sm text-textLight">Commitment to eco-friendly practices and respecting nature.</p>
+                </div>
+            </div>
+        </div>
+     </section>
+
+    <footer class="bg-gray-900 text-white py-12 mt-20">
+      <div class="container mx-auto max-w-6xl px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Rayal Park Hotel</h3>
+          <p class="text-sm text-gray-400">Luxury resort located in the heart of nature. Perfect for family, business, and relaxation.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="index.html#home" class="hover:text-white">Home</a></li>
+            <li><a href="#about" class="hover:text-white">About</a></li>
+            <li><a href="index.html#rooms" class="hover:text-white">Rooms</a></li>
+            <li><a href="index.html#contact" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-3">Contact Us</h4>
+          <p class="text-sm text-gray-400">Email: info@rayalpark.com</p>
+          <p class="text-sm text-gray-400">Phone: +123 456 789</p>
+          <p class="text-sm text-gray-400">Address: 123 Royal Street, Cityville</p>
+        </div>
+      </div>
+      <div class="text-center mt-8 text-sm text-gray-500">© 2025 Rayal Park. All rights reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
