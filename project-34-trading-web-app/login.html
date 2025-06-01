@@ -2,88 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <style>
-        
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="font-montserrat bg-esblack text-light-white h-screen flex items-center justify-center">
+<body class="font-montserrat bg-esblack text-light-white h-screen flex flex-col items-center justify-center">
 
-    <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 class="text-3xl text-white font-bold mb-6 text-center">Login</h2>
+  <!-- Header -->
+  <header class="sticky top-0 left-0 right-0 bg-esblack border-b shadow-md z-50 w-full">
+    <section class="flex justify-between items-center p-4 max-w-6xl mx-auto">
+      <!-- Logo -->
+      <a href="#home" class="text-2xl text-white font-bold flex items-center">
+        <i class="fa-solid fa-money-bill-trend-up mr-2 text-coral-500"></i>
+        E-stock
+      </a>
 
-        <form id="loginForm" action="#" method="post">
-            <div class="mb-4">
-                <label for="username" class="block text-gray-300 text-sm font-bold mb-2">Username</label>
-                <input type="text" id="username" name="username"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 !text-white"
-                    placeholder="Username">
-            </div>
+      <!-- Navigation -->
+      <nav class="flex items-center">
+        <div class="flex gap-8 px-4 py-3 rounded-lg shadow-lg">
+          <a href="#home" class="text-white hover:text-coral-500 flex flex-col items-center">
+            <i class="fas fa-home text-2xl"></i>
+            <span class="hidden md:block text-xs">Home</span>
+          </a>
+          <a href="#about" class="text-white hover:text-coral-500 flex flex-col items-center">
+            <i class="fas fa-circle-info text-2xl"></i>
+            <span class="hidden md:block text-xs">About</span>
+          </a>
+          <a href="#download" class="text-white hover:text-coral-500 flex flex-col items-center">
+            <i class="fas fa-download text-2xl"></i>
+            <span class="hidden md:block text-xs">Download</span>
+          </a>
+          <a href="#pricing" class="text-white hover:text-coral-500 flex flex-col items-center">
+            <i class="fas fa-comments-dollar text-2xl"></i>
+            <span class="hidden md:block text-xs">Pricing</span>
+          </a>
+          <a href="login.html" class="text-white hover:text-coral-500 flex flex-col items-center">
+            <i class="fas fa-user text-2xl"></i>
+            <span class="hidden md:block text-xs">Login</span>
+          </a>
+        </div>
+      </nav>
 
-            <div class="mb-6">
-                <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
-                <input type="password" id="password" name="password"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline bg-gray-700 !text-white"
-                    placeholder="Password">
-            </div>
+      <!-- CTA Button -->
+      <a href="#download"
+        class="bg-gradient-to-r from-deeppink to-coral text-white px-4 py-2 rounded-full hover:from-coral hover:to-deeppink text-sm">
+        Download app
+      </a>
+    </section>
+  </header>
 
-            <div id="error-message" class="text-red-500 text-sm mb-4 hidden">All fields are required.</div>
-            <div id="success-message" class="text-green-500 text-sm mb-4 hidden">Successfully signed in!</div>
+  <!-- Login Form -->
+  <main class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full mt-10">
+    <h2 class="text-3xl text-white font-bold mb-6 text-center">Login</h2>
 
+    <form id="loginForm" method="post" novalidate>
+      <!-- Username -->
+      <div class="mb-4">
+        <label for="username" class="block text-gray-300 text-sm font-bold mb-2">Username</label>
+        <input type="text" id="username" name="username" placeholder="Username"
+          class="shadow border rounded w-full py-2 px-3 bg-gray-700 text-white leading-tight focus:outline-none focus:shadow-outline" />
+      </div>
 
-            <div class="flex items-center justify-between">
-                <button
-                    class="bg-gradient-to-r from-deeppink to-coral hover:from-coral hover:to-deeppink text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit">
-                    Login
-                </button>
-                <a class="inline-block align-baseline font-bold text-sm text-coral-500 hover:text-coral-300"
-                    href="forgot-password.html">
-                    Forgot Password?
-                </a>
-            </div>
-        </form>
+      <!-- Password -->
+      <div class="mb-6">
+        <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
+        <input type="password" id="password" name="password" placeholder="Password"
+          class="shadow border rounded w-full py-2 px-3 bg-gray-700 text-white leading-tight focus:outline-none focus:shadow-outline" />
+      </div>
 
-        <p class="text-center text-gray-400 text-xs mt-4">
-            © 2024 Trading App. All rights reserved.
-        </p>
-    </div>
+      <!-- Messages -->
+      <div id="error-message" class="text-red-500 text-sm mb-4 hidden">All fields are required.</div>
+      <div id="success-message" class="text-green-500 text-sm mb-4 hidden">Successfully signed in!</div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+      <!-- Buttons -->
+      <div class="flex items-center justify-between">
+        <button type="submit"
+          class="bg-gradient-to-r from-deeppink to-coral hover:from-coral hover:to-deeppink text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Login
+        </button>
+        <a href="forgot-password.html"
+          class="font-bold text-sm text-coral-500 hover:text-coral-300">Forgot Password?</a>
+      </div>
+    </form>
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-            const successMessage = document.getElementById('success-message');
+    <p class="text-center text-gray-400 text-xs mt-4">
+      © 2024 Trading App. All rights reserved.
+    </p>
+  </main>
 
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (event) {
+      event.preventDefault();
 
-            if (!username || !password) {
-                errorMessage.classList.remove('hidden');
-                successMessage.classList.add('hidden');
-                return; 
-            }
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorMessage = document.getElementById('error-message');
+      const successMessage = document.getElementById('success-message');
 
-            
-            errorMessage.classList.add('hidden');
-            successMessage.classList.remove('hidden');
+      if (!username || !password) {
+        errorMessage.classList.remove('hidden');
+        successMessage.classList.add('hidden');
+        return;
+      }
 
-            
-            setTimeout(() => {
-                window.location.href = "index.html"; 
-            }, 1500); 
+      errorMessage.classList.add('hidden');
+      successMessage.classList.remove('hidden');
 
-        });
-    </script>
-
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1500);
+    });
+  </script>
 </body>
 
 </html>
