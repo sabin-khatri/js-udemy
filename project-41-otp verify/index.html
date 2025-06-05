@@ -1,0 +1,30 @@
+<!-- make otp veriy page -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Generator & Verifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="otp-container">
+        <h1>OTP Generator</h1>
+
+        <div class="otp-display-area">
+            <p>Generated OTP (for demo): <span id="generatedOtpDisplay">- - - - - -</span></p>
+        </div>
+
+        <button id="generateBtn">Generate OTP</button>
+
+        <div class="verification-area">
+            <input type="text" id="otpInput" placeholder="Enter OTP" maxlength="6">
+            <button id="verifyBtn">Verify OTP</button>
+        </div>
+
+        <p id="messageArea"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
