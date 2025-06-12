@@ -28,15 +28,57 @@ body{
     border-radius: 10px;
     cursor: pointer;
     background-color: #f2f2f2;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #343434;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 90px;
+    width: 90px;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .item.active{
     border: 2px solid #343434;
+     background-color: #fff;
+     color: #343434;
+     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+     z-index: 2;
+     position: relative;
+     overflow: hidden;
+     height: 90px;
+     width: 90px;
+     flex-shrink: 0;
+     flex-grow: 0;
+     transform: scale(1.1);
+     transition: all 0.3s ease-in-out;
+     cursor: default;
 }
 
 .item img{
-    width: 90px;
-    height: 90px;
+    
+     object-fit: cover;
+      border-radius: 10px;
+      transition: all 0.3s ease-in-out;
+      z-index: 1;
+      position: relative;
+      overflow: hidden;
+      height: 90px;
+      width: 90px;
+      flex-shrink: 0;
+      flex-grow: 0;
+      transform: scale(1.1);
+      cursor: default;
+      
+
 }
 
 .carousel{
@@ -71,4 +113,17 @@ body{
 
 #nextBtn{
     right: 0;
+}
+
+
+.carousel button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border:none;
+    outline:none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
 }
