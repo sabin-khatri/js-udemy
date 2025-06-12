@@ -20,6 +20,7 @@ body{
 
 .col-2{
    width: 84.4%;
+   
 }
 
 .item{
@@ -85,13 +86,28 @@ body{
     position: relative;
     margin: 0 auto;
     overflow: hidden;
+    width: 579px;
+    height: 579px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .slides-container{
     display: flex;
     width: 579px;
     height: 579px;
+     overflow: hidden;
+     position: relative;
+     border-radius: 10px;
+     box-shadow: 0 0 5px rgba(0,0,0,0.1);
+     transition: all 0.3s ease-in-out;
+      
 }
+
 
 .slide img{
     width: 579px;
@@ -109,10 +125,14 @@ body{
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    
 }
 
 #nextBtn{
     right: 0;
+
 }
 
 
